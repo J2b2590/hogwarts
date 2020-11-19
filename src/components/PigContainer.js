@@ -37,9 +37,6 @@ renderPigs = () => {
    return <div onClick={this.handleClick} id={hog.name} key={this.props.hogs.indexOf(hog)} className="pigTile ui eight wide column">
             <h3>{hog.name}</h3>
             <img width="50%" src={pigImage} />
-<<<<<<< HEAD
-            <p>{this.state.pigInfo}</p>        
-=======
             {
               this.state.thePig.name === hog.name ?                 
               <ul>
@@ -54,7 +51,6 @@ renderPigs = () => {
             }
 
             
->>>>>>> 87e66b7bd3f63750678d337e94520db4ad798ad3
           </div>
   })
 

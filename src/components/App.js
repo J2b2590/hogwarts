@@ -38,39 +38,48 @@ class App extends Component {
 
   onFindPigsClick = () => {
 
-
-    const newArray = this.state.filter.isGreasy ? 
-    hogs.filter(hog => {
-      return hog.greased === true
-    })
-    :
-    hogs.filter(hog => {
-      return hog.greased === false
-    })
-
-    this.setState({
-      currentHogs: newArray
-    })
-
-    // if (this.state.filter.isGreasy){
-    //   const newArray = hogs.filter(hog => {
-    //     return hog.greased === true
+    // let newArray;
+  
+    // switch(this.state.filter.isGreasy){
+    //   case true: return newArray = hogs.filter(hog => {
+    //   return hog.greased === true
     //   })
-
-    //   this.setState({
-    //     currentHogs: newArray
-    //   })
-    // } else if(this.state.filter.isGreasy === false){
-    //   const newArray = hogs.filter(hog => {
+    //   case false: return newArray = hogs.filter(hog => {
     //     return hog.greased === false
     //   })
-
-    //   this.setState({
-    //     currentHogs: newArray
-    //   })
+    //   case "all": return newArray = hogs
     // }
+    // console.log(newArray)
+    // this.setState({
+    //   currentHogs: newArray
+    // })
 
+    console.log(hogs)
 
+    if (this.state.filter.isGreasy === true){
+      const newArray = hogs.filter(hog => {
+        return hog.greased === true
+      })
+
+      this.setState({
+        currentHogs: newArray
+      })
+    } else if(this.state.filter.isGreasy === false){
+      const newArray = hogs.filter(hog => {
+        return hog.greased === false
+      })
+      this.setState({
+        currentHogs: newArray
+      })
+    } else if(this.state.filter.isGreasy === 'all'){
+      const newArray = hogs.map(hog => {
+        return hog
+      })
+
+      this.setState({
+        currentHogs: newArray
+      })
+    }
   }
 
   render() {
